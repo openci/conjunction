@@ -12,7 +12,7 @@ Connecting CI pipelines together so that upstream projects can trigger builds an
 
 ## How does it work at high level
 
-<img src="./doc/images/simple-diagram.png" width="300">
+<img src="./doc/images/simple-diagram.png" width="600">
 
 Conjunction is pretty simple.
 
