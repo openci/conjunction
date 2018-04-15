@@ -16,10 +16,32 @@ Connecting CI pipelines together so that upstream projects can trigger builds an
 
 Conjunction is pretty simple.
 
-An upstream project is configured to send a trigger event to Conjunction upon successful pipeline completion.
+1) Upon successful pipeline completion, an upstream project sends its status to Conjunction.
+2) Conjunction sends a notification to each project that is depending on the upstream project.
+3) When a dependent project's build has finished, it reports back to Conjunction its status.
 
-A trigger event contains:
+## What do the data structures look like
+
+### A trigger event looks like:
+
+- A build event ID
+- A token used for authentication with the CI system
+- A project ID
+- Build metadata
+
+### A status event looks like:
+
+- A build event ID
 - A project ID
 - A token used for authentication with Conjunction
 - Build metadata (TBD)
 - Build result
+
+## Why this approach
+
+### 1) Simple
+- Just one server, simple messaging system
+
+### 2) Integrates across existing build systems easily
+- Use webhooks / triggers and existing build configs to integrate with the system
+
