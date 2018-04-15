@@ -37,6 +37,19 @@ Conjunction is pretty simple.
 - Build metadata (TBD)
 - Build result
 
+## How will it work with existing CI systems?
+
+- Trigger events use webhooks in the target CI system that starts a build pipeline. Usually these webhooks require a token for authentication and allow you to pass metadata in as variables.
+  - On Jenkins, use [Generic Webhook Trigger plugin](https://wiki.jenkins.io/display/JENKINS/Generic+Webhook+Trigger+Plugin)
+  - On Gitlab, use [Triggers](https://docs.gitlab.com/ee/ci/triggers/#adding-a-new-trigger)
+  - On Travis, use [Triggers](https://docs.travis-ci.com/user/triggering-builds/)
+  - On Zuul, TBD
+- Status events sent to Conjunction use sections of the pipeline config to run callbacks from.
+  - On Jenkins, use [Post section](https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Running-multiple-steps#cleaning-up-after-yourself)
+  - On Gitlab, use [When section](https://docs.gitlab.com/ee/ci/yaml/#when)
+  - On Travis, use [the info here](https://docs.travis-ci.com/user/customizing-the-build)
+  - On Zuul, TBD
+
 ## What are the advantages of this approach?
 
 ### Simple
