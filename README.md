@@ -6,11 +6,11 @@ Connecting CI pipelines together so that upstream projects can trigger builds an
 
 ## Why is this needed?
 
-- An upstream project changes - how do downstream projects know it has changed?
-- Downstream projects are failing because of an upstream change but the upstream project is oblivious
-- Webhooks for GitHub require the user to be logged in and part of the project
-- Something goes wrong downstream but it is not clear who to contact upstream about it
-- It is hard to tell upstream what downstream projects are using your artifacts
+- **Oblivious dependencies** - An upstream project changes, but how do downstream projects know it has changed?
+- **Breaking changes** - Downstream projects are failing because of an upstream change but the upstream project is oblivious
+- **Restricted webhooks** - Webhooks for GitHub require the user to be logged in and part of the project
+- **Unknown maintainers** - Something goes wrong downstream but it is not clear who to contact upstream about it
+- **Unclear users** - It is hard to tell upstream what downstream projects are using your artifacts
 
 ## How does it work at high level?
 
@@ -18,9 +18,9 @@ Connecting CI pipelines together so that upstream projects can trigger builds an
 
 Conjunction is pretty simple.
 
-1. Upon successful pipeline completion, an upstream project sends its status to Conjunction.
-2. Conjunction sends a notification to each project that is depending on the upstream project.
-3. When a dependent project's build has finished, it reports back to Conjunction its status.
+1. **Upstream build reports success** - Upon successful pipeline completion, an upstream project sends its status to Conjunction.
+2. **Conjunction notifies dependencies** - Conjunction sends a notification to each project that is depending on the upstream project.
+3. **Dependencies report back status** - When a dependent project's build has finished, it reports back to Conjunction its status.
 
 ## What do the data structures look like?
 
