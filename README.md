@@ -2,6 +2,8 @@
 
 Connecting CI pipelines together so that upstream projects can trigger builds and track results for downstream projects
 
+<img src="./doc/images/more-detailed-diagram.png">
+
 ## Why is this needed?
 
 - An upstream project changes - how do downstream projects know it has changed?
@@ -28,6 +30,11 @@ Conjunction is pretty simple.
 - A token used for authentication with the CI system
 - A project ID
 - Build metadata (TBD)
+  - Owners file
+  - Git Repository URL
+  - Conjunction Project URL
+  - Branch / Tag / Commit hash
+  - Artifacts list
 
 ### A status event looks like:
 
@@ -35,6 +42,10 @@ Conjunction is pretty simple.
 - A token used for authentication with Conjunction
 - A project ID
 - Build metadata (TBD)
+  - Owners file
+  - Git Repository URL
+  - Branch / Tag / Commit hash
+  - Artifacts list
 - Build result
 
 ## How will it work with existing CI systems?
