@@ -148,3 +148,7 @@ Authorization: Bearer <conjunction_auth_token>
 ### Build time statistics
 - Estimate build time from previous successful builds
 - Keep track of how long build time is taking
+
+### OAuth with git hosting providers
+- Provides synchronization and authentication with a trusted known platform
+- Follow / star implementation support for users / projects on Conjunction
