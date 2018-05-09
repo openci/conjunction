@@ -75,6 +75,7 @@ Conjunction is pretty simple.
 - For including into README files and websites.
 - Indicate percentage of downstream that succeeded last build.
 - Statistics showing how many improved / broke / stayed the same compared to the build before.
+- [Shields.io](https://shields.io/) support
 
 ### Auxilliary notifications
 - IRC, Slack, Twitter, custom system
