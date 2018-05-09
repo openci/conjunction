@@ -83,3 +83,16 @@ Conjunction is pretty simple.
 - Project A triggers dependent project B. Project B completes and then triggers project C.
 - Map the whole build tree from starting project to the last project.
 - Check for repeated nodes in the build tree to stop build loops.
+
+### Event auditing
+- Why did this event happen? / Where did it come from?
+- Trace the source of the event back to its origin
+
+### Build changes between events
+- What has changed between the last successful run and the current failure?
+- What did we change to get the failure to succeed?
+- References to source code diffs
+
+### Build time statistics
+- Estimate build time from previous successful builds
+- Keep track of how long build time is taking
