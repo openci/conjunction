@@ -35,6 +35,31 @@ Conjunction is pretty simple.
   - Conjunction Project URL
   - Branch / Tag / Commit hash
   - Artifacts list
+ 
+eg:
+
+```
+Authorization: Bearer <ci_auth_token>
+```
+
+```json
+{
+  "build_event_id": "bd16e225-bc04-4f7c-ae26-3ab3593d405e",
+  "project_id": "namespace/example_project",
+  "metadata": {
+    "owners": "https://example.com/path-to-owners-file.txt",
+    "repository": "https://github.com/user/repo",
+    "project_url": "https://example.com/user/project",
+    "branch": "master",
+    "tag": "v1.0.3",
+    "commit": "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12",
+    "artifacts": {
+        "base-install.img": "v1.0.3",
+        "extensions.tar.gz": "v1.0.3"
+    }
+  }
+}
+```
 
 ### A status event looks like:
 
@@ -47,6 +72,32 @@ Conjunction is pretty simple.
   - Branch / Tag / Commit hash
   - Artifacts list
 - Build result
+
+eg:
+
+```
+Authorization: Bearer <conjunction_auth_token>
+```
+
+```json
+{
+  "build_event_id": "bd16e225-bc04-4f7c-ae26-3ab3593d405e",
+  "project_id": "namespace/example_project",
+  "metadata": {
+    "owners": "https://example.com/path-to-owners-file.txt",
+    "repository": "https://github.com/user/repo",
+    "project_url": "https://example.com/user/project",
+    "branch": "master",
+    "tag": "v1.0.3",
+    "commit": "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12",
+    "artifacts": {
+        "base-install.img": "v1.0.3",
+        "extensions.tar.gz": "v1.0.3"
+    }
+  },
+  "result": "SUCCESS"
+}
+```
 
 ## How will it work with existing CI systems?
 
